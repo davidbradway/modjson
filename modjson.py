@@ -25,7 +25,6 @@ def modify_file_dict(filepath: str, d: Dict) -> None:
     # change some field values
     for key, value in d.items():
         data = modify(data, key, value)
-        data = modify(data, 'from', 'Ohio')
     display_data(data)
     write_file(filepath, data)
 
