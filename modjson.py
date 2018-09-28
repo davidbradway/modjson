@@ -29,7 +29,7 @@ def modify_file_dict(filepath: str, d: Dict) -> None:
     write_file(filepath, data)
 
 def main() -> None:
-    filepath = r'C:\Users\dpb6\Downloads\repos\modjson\data.txt'
+    filepath = r'C:\Users\dpb6\Downloads\repos\modjson\data.json'
     data = {'firstname': 'Scott', 'from': 'Nebraska'}
     write_file(filepath, data)
     # Create dictionary of name-value pairs to modify
