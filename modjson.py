@@ -11,30 +11,26 @@ def read_file(filepath: str) -> Dict:
         data = json.load(json_file)
         return data
 
-def display_data(data: Dict) -> None:
-    print(data)
-
-def modify(data: Dict, name: str, value: Any) -> Dict:
-    data[name] = value
-    return data
-
-def modify_file_dict(filepath: str, d: Dict) -> None:
+def modify_file_dict(filepath: str, d: Dict) -> Dict:
     # Read data in
     data = read_file(filepath)
-    display_data(data)
     # change some field values
     for key, value in d.items():
-        data = modify(data, key, value)
-    display_data(data)
+        data[key] = value
     write_file(filepath, data)
+    return data
 
 def main() -> None:
-    filepath = r'C:\Users\dpb6\Downloads\repos\modjson\data.json'
+    # You can use an abosolute path (yours may vary)
+    #filepath = r'C:\Users\dpb6\Downloads\repos\modjson\data.json'
+    filepath = r'data.json'
     data = {'firstname': 'Scott', 'from': 'Nebraska'}
     write_file(filepath, data)
+    print(data)
     # Create dictionary of name-value pairs to modify
-    data = {'firstname': 'David', 'from': 'Ohio'}
-    modify_file_dict(filepath, data)
+    d = {'firstname': 'David', 'from': 'Ohio'}
+    data = modify_file_dict(filepath, d)
+    print(data)
 
 if __name__ == '__main__':
     main()
