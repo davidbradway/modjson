@@ -20,17 +20,20 @@ def modify_file_dict(filepath: str, d: Dict) -> Dict:
     write_file(filepath, data)
     return data
 
+def print_pretty(data: Dict) -> None:
+    print(json.dumps(data, indent=4))
+    
 def main() -> None:
     # You can use an abosolute path (yours may vary)
     #filepath = r'C:\Users\dpb6\Downloads\repos\modjson\data.json'
     filepath = r'data.json'
     data = {'firstname': 'Scott', 'from': 'Nebraska'}
     write_file(filepath, data)
-    print(data)
+    print_pretty(data)
     # Create dictionary of name-value pairs to modify
     d = {'firstname': 'David', 'from': 'Ohio'}
     data = modify_file_dict(filepath, d)
-    print(data)
+    print_pretty(data)
 
 if __name__ == '__main__':
     main()
