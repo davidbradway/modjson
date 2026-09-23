@@ -1,6 +1,6 @@
 # modjson
 
-A Python tool and script to modify json file data fields. This project is intended to help manage POPS files on the Sequoia scanner and modify them while imaging.
+A Python tool and script to modify json file data fields.
 
 ## Installation
 
